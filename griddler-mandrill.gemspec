@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'griddler/mandrill/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'griddler-mandrill'
+  spec.name          = 'griddler-mandrill-acd'
   spec.version       = Griddler::Mandrill::VERSION
   spec.authors       = ['Stafford Brunk']
   spec.email         = ['stafford.brunk@gmail.com']
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'griddler'
+  spec.add_dependency 'griddler-acd'
 
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rake'
