@@ -20,7 +20,8 @@ module Griddler
             text: event.fetch(:text, ''),
             html: event.fetch(:html, ''),
             raw_body: event[:raw_msg],
-            attachments: attachment_files(event)
+            attachments: attachment_files(event),
+            headers: event[:headers].to_a.map{ |x| x.join(': ') }.join("\n")
           }
         end
       end
