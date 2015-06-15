@@ -12,8 +12,10 @@ module Griddler
 
       def normalize_params
         events.map do |event|
+          to_list = recipients(:to, event)
+          to_list = [event['email']] if (to_list.nil? || to_list.empty?) && event['email']
           {
-            to: recipients(:to, event),
+            to: to_list,
             cc: recipients(:cc, event),
             from: full_email([ event[:from_email], event[:from_name] ]),
             subject: event[:subject],
